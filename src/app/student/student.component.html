@@ -1,0 +1,9 @@
+<h2>Student Component Works!!</h2>
+<h2>Subscribe Counter: {{subscribeCounter}}</h2>
+<h2>Value from Parent: {{parentData}}</h2>
+<div>
+  <input type="text" #childText (keyup)="onChange(childText.value)">
+  <button (click)="increaseCount()" type="button" class="btn btn-primary" tooltip="Click to see increase counter.">
+    Increase Counter
+  </button>
+</div>

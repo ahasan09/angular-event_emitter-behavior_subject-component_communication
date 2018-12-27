@@ -1,0 +1,27 @@
+<fieldset style="background:#e1eff2;">
+  <legend style="font-size:20px;">Parent</legend>
+  <div class="col-sm-4">
+    <h2>Emit Counter: {{counter}}</h2>
+    <h2>Subscribe Counter: {{subscribeCounter}}</h2>
+    <h2>Parent Event: {{parentData}}</h2>
+    <h2>Value from Course Child: {{childData}}</h2>
+    <div>
+      <input type="text" #parentText (keyup)="0">
+      <button (click)="parentEvent()" type="button" class="btn btn-primary">
+        Parent Button
+      </button>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <fieldset style="background:#72c940;">
+      <legend style="font-size:20px;">Student Children</legend>
+      <student (childEvent)="childData=$event" [parentData]="parentData"></student>
+    </fieldset>
+  </div>
+  <div class="col-sm-4">
+    <fieldset style="background:#b35fcc;">
+      <legend style="font-size:20px;">Courses Children</legend>
+      <courses [parentData]="parentText.value"></courses>
+    </fieldset>
+  </div>
+</fieldset>
